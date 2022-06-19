@@ -3,7 +3,7 @@ package com.laviniarat.salarycalculator;
 import javax.swing.*;
 import java.awt.*;
 
-class CalculatorSalariuNetFrame extends JFrame {
+class CalculatorSalariuNetPanel extends JPanel {
     private JTextField tFieldSalariu = new JTextField();;
     private JTextField tFieldValoareTichet = new JTextField();;
     private JTextField tFieldNumarTichete = new JTextField();;
@@ -14,15 +14,10 @@ class CalculatorSalariuNetFrame extends JFrame {
     private JLabel labelImpozitVenitValue = new JLabel();
 
 
-    public CalculatorSalariuNetFrame() {
-        super("Calculator salariu");
-        setResizable(false);
-        setSize(750, 700);
-        setPreferredSize(getSize());
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    public CalculatorSalariuNetPanel() {
     }
 
-    public void addComponents() {
+    public void addComponents(Container container) {
 
         //creating the grid and the panel
         GridLayout grid = new GridLayout(19, 1, 8, 5);
@@ -35,7 +30,7 @@ class CalculatorSalariuNetFrame extends JFrame {
         panel.add(headerlabel);
 
         panel.add(new Label());
-        this.getContentPane().add(panel, BorderLayout.NORTH);
+        container.add(panel, BorderLayout.NORTH);
         Font timesNewRoman = new Font("Times New `Roman", Font.PLAIN, 18);
 
         final JPanel panelSalariu = buildRow(timesNewRoman, "Salariu brut:", tFieldSalariu);
@@ -82,7 +77,6 @@ class CalculatorSalariuNetFrame extends JFrame {
         final JPanel panelImpozitVenit = buildRow(timesNewRoman, "Impozit pe venit (IV)  10%:", labelImpozitVenitValue);
         panel.add(panelImpozitVenit);
 
-        this.pack();
         this.setVisible(true);
     }
 

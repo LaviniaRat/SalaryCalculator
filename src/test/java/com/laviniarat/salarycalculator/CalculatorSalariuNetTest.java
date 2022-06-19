@@ -6,24 +6,24 @@ import org.junit.jupiter.api.Test;
 class CalculatorSalariuNetTest {
 
     @Test
-    void happyFlowTestScutireImpozit() {
-        CalculatorSalariuNet test1 = new CalculatorSalariuNet(10000, 20,20,true);
-        test1.compute();
-        Assertions.assertEquals(6500, test1.getSalariuNet());
-        Assertions.assertEquals(2500, test1.getCAS());
-        Assertions.assertEquals(1000, test1.getCASS());
-        Assertions.assertEquals(0, test1.getIV());
-    }
-
-
-    @Test
-    void happyFlowTestFaraScutireImpozit() {
+    void happyFlowTestCuTicheteFaraScutireImpozit() {
         CalculatorSalariuNet test1 = new CalculatorSalariuNet(10000, 20,20,false);
         test1.compute();
         Assertions.assertEquals(5810, test1.getSalariuNet());
         Assertions.assertEquals(2500, test1.getCAS());
         Assertions.assertEquals(1000, test1.getCASS());
         Assertions.assertEquals(690, test1.getIV());
+    }
+
+
+    @Test
+    void happyFlowTestCuTicheteCuScutireImpozit() {
+        CalculatorSalariuNet test1 = new CalculatorSalariuNet(10000, 20,20,true);
+        test1.compute();
+        Assertions.assertEquals(6500, test1.getSalariuNet());
+        Assertions.assertEquals(2500, test1.getCAS());
+        Assertions.assertEquals(1000, test1.getCASS());
+        Assertions.assertEquals(0, test1.getIV());
     }
 
     @Test
