@@ -25,7 +25,7 @@ class CalculatorSalariuNetPanel extends JPanel {
         panel.setLayout(grid);
 
         //creating the  header label
-        JLabel headerlabel = new JLabel("Calculator salariu net", JLabel.CENTER);
+        JLabel headerlabel = new JLabel("Calculator Salariu Net", JLabel.CENTER);
         headerlabel.setFont(new Font("Times New Roman", Font.PLAIN, 22));
         panel.add(headerlabel);
 
@@ -33,7 +33,7 @@ class CalculatorSalariuNetPanel extends JPanel {
         container.add(panel, BorderLayout.NORTH);
         Font timesNewRoman = new Font("Times New `Roman", Font.PLAIN, 18);
 
-        final JPanel panelSalariu = buildRow(timesNewRoman, "Salariu brut:", tFieldSalariu);
+        final JPanel panelSalariu = buildRow(timesNewRoman, "Salariu Brut:", tFieldSalariu);
         panel.add(panelSalariu);
 
                 // creating label 2

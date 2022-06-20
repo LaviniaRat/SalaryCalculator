@@ -12,8 +12,6 @@ public class MainFrame extends JFrame {
     }
 
     public void addComponents() {
-        CalculatorSalariuNetPanel calculatorSalariuNet = new CalculatorSalariuNetPanel();
-        CalculatorSalariuBrutPanel calculatorSalariuBrut = new CalculatorSalariuBrutPanel();
 
         GridBagLayout grid = new GridBagLayout();
         final JPanel panel = new JPanel();
@@ -21,8 +19,11 @@ public class MainFrame extends JFrame {
         GridBagConstraints c = new GridBagConstraints();
         c.weighty = 0.2;
 
+        this.getContentPane().add(panel);
+
+        Container contentPanel = new Panel();
+
         JButton netButton = new JButton("Salariu Net");
-//        netButton.setSize(100, 100);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.anchor = GridBagConstraints.FIRST_LINE_START;
         c.weightx = 0.5;
@@ -30,8 +31,8 @@ public class MainFrame extends JFrame {
         c.gridy = 0;
         panel.add(netButton, c);
 
+
         JButton brutButton = new JButton("Salariu Brut");
-//        brutButton.setSize(100, 100);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
         c.gridx = 1;
@@ -39,9 +40,6 @@ public class MainFrame extends JFrame {
         panel.add(brutButton, c);
 
 
-        this.getContentPane().add(panel);
-
-        Container contentPanel = new Panel();
         c.fill = GridBagConstraints.HORIZONTAL;
         c.anchor = GridBagConstraints.LINE_START;
         c.weighty = 0.80;
@@ -51,10 +49,27 @@ public class MainFrame extends JFrame {
         c.gridy = 1;
         panel.add(contentPanel, c);
 
-//        calculatorSalariuNet.addComponents(contentPanel);
-        calculatorSalariuBrut.addComponents(contentPanel);
+        netButton.addActionListener(e -> {
+            contentPanel.removeAll();
+            getContentPane().repaint();
+            CalculatorSalariuNetPanel calculatorSalariuNet = new CalculatorSalariuNetPanel();
+            calculatorSalariuNet.addComponents(contentPanel);
+            this.setVisible(true);
+        });
+
+        brutButton.addActionListener(e -> {
+            contentPanel.removeAll();
+            getContentPane().repaint();
+            CalculatorSalariuBrutPanel calculatorSalariuBrut = new CalculatorSalariuBrutPanel();
+            calculatorSalariuBrut.addComponents(contentPanel);
+            getContentPane().revalidate();
+            this.setVisible(true);
+        });
+
 
         this.pack();
         this.setVisible(true);
+
+
     }
 }
