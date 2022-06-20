@@ -71,7 +71,7 @@ public class CalculatorSalariuBrutPanel extends JPanel {
             final JPanel panelCAS = buildRow(timesNewRoman, "Asigurari Sociale (CAS)  25%:", labelCASValue);
             panel.add(panelCAS);
 
-            final JPanel panelCASS = buildRow(timesNewRoman, "Asigurari Sociale de Sanatate (CASS)  10%:", labelCASSValue);
+            final JPanel panelCASS = buildRow(timesNewRoman, "Asigurari Sociale de Sanatate (CASS) 10%:", labelCASSValue);
             panel.add(panelCASS);
 
             final JPanel panelImpozitVenit = buildRow(timesNewRoman, "Impozit pe venit (IV)  10%:", labelImpozitVenitValue);
